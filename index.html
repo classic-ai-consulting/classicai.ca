@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classic AI Consulting</title>
+<meta name="description" content="A small software business in Saskatoon. Apps, hosting and upkeep, and AI used only where it helps.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://classicai.ca/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+  :root{
+    --ground:#f7f8f9;
+    --ink:#1a2027;
+    --muted:#5a6672;
+    --faint:#8b959f;
+    --rule:#dde1e5;
+    --accent:#2f5d50;
+    --accent-soft:#eaefec;
+
+    --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#12171c;
+      --ink:#e7ebee;
+      --muted:#9aa5b0;
+      --faint:#6d7883;
+      --rule:#28313a;
+      --accent:#8fbfae;
+      --accent-soft:#1b2a26;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#12171c;
+    --ink:#e7ebee;
+    --muted:#9aa5b0;
+    --faint:#6d7883;
+    --rule:#28313a;
+    --accent:#8fbfae;
+    --accent-soft:#1b2a26;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:clamp(2.5rem,7vw,5rem) clamp(1.25rem,6vw,3rem);
+    max-width:46rem;
+    margin:0 auto;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{display:flex;flex-direction:column;gap:.85rem;}
+  .wordmark{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(1.85rem,5.6vw,2.85rem);
+    line-height:1.1;
+    letter-spacing:-0.015em;
+    text-wrap:balance;
+    margin:0;
+  }
+  .wordmark .suffix{color:var(--muted);font-weight:400;}
+  .lede{
+    font-size:clamp(1.0625rem,2.4vw,1.25rem);
+    line-height:1.5;
+    color:var(--muted);
+    max-width:33rem;
+    text-wrap:pretty;
+    margin:0;
+  }
+  .lede em{font-style:normal;color:var(--ink);}
+
+  .rule{
+    height:1px;
+    background:var(--rule);
+    border:0;
+    margin:clamp(2.25rem,5vw,3.25rem) 0;
+    position:relative;
+  }
+  .rule::before{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:3.5rem;
+    height:1px;
+    background:var(--accent);
+  }
+
+  /* ---- what the practice does ---- */
+  .practice{
+    display:grid;
+    gap:clamp(1.5rem,3.5vw,2rem);
+    margin:0;
+  }
+  .area{display:grid;gap:.3rem;}
+  .area h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.0625rem;
+    letter-spacing:-0.005em;
+    margin:0;
+    color:var(--ink);
+  }
+  .area p{
+    margin:0;
+    color:var(--muted);
+    font-size:.9375rem;
+    max-width:34rem;
+    text-wrap:pretty;
+  }
+
+  /* ---- contact ---- */
+  .contact{margin:clamp(2.25rem,5vw,3.25rem) 0 0;}
+  .contact-label{
+    font-family:var(--mono);
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    color:var(--faint);
+    margin:0 0 .45rem;
+  }
+  a.mail{
+    font-family:var(--serif);
+    font-size:clamp(1.25rem,3.4vw,1.55rem);
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    padding-bottom:.08em;
+    transition:border-color .15s ease, background-color .15s ease;
+  }
+  a.mail:hover{border-bottom-color:var(--accent);background:var(--accent-soft);}
+  a.mail:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+    background:var(--accent-soft);
+  }
+
+  footer{
+    margin-top:clamp(2.5rem,6vw,3.75rem);
+    padding-top:1.1rem;
+    border-top:1px solid var(--rule);
+    display:flex;
+    flex-wrap:wrap;
+    gap:.35rem 1.5rem;
+    font-family:var(--mono);
+    font-size:.6875rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--faint);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="masthead">
+      <h1 class="wordmark">Classic&nbsp;AI&nbsp;Consulting <span class="suffix">Inc.</span></h1>
+      <p class="lede">A small software business in Saskatoon. I build apps, look after the
+        servers they run on, and use AI <em>only where it helps</em>.</p>
+    </header>
+
+    <hr class="rule">
+
+    <div class="practice">
+      <section class="area">
+        <h2>Apps</h2>
+        <p>I design and build software, from a first rough version to a tool your staff use
+          every day.</p>
+      </section>
+
+      <section class="area">
+        <h2>Hosting and upkeep</h2>
+        <p>I set up and run the servers, cloud accounts and networks your software needs. The
+          person who built it is the one who keeps it running.</p>
+      </section>
+
+      <section class="area">
+        <h2>AI, used with care</h2>
+        <p>I can add AI to your work or automate tasks with it. I'll tell you straight what it
+          can do today, what it can't, and when you're better off without it.</p>
+      </section>
+    </div>
+
+    <section class="contact">
+      <p class="contact-label">Get in touch</p>
+      <a class="mail" href="mailto:curtis@classicai.ca">curtis@classicai.ca</a>
+    </section>
+
+    <footer>
+      <span>© 2026 Classic AI Consulting Inc.</span>
+      <span>Saskatoon, Saskatchewan</span>
+    </footer>
+
+  </main>
+</body>
+</html>
