@@ -1,0 +1,3 @@
+# Every change to the default branch needs Curtis's review (org ruleset protect-default-branch,
+# which requires code-owner review).
+* @CurtisThe
